@@ -14,7 +14,7 @@ mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(()=> {
 const app = express();
 
 //app.get('/rentals', function(req, res){
-//   res.json({'success': true});
+ //  res.json({'success': true});
 //});
 
 app.use('/api/v1/rentals', rentalRoutes);
