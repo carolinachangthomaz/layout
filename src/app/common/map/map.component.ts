@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, ChangeDetectorRef } from '@angular/core';
+import { MapService } from './map.service';
 
 @Component({
   selector: 'airbnb-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit {
+export class MapComponent{
 
-  constructor() { }
+  @Input() location:string;
+  isPositionError: boolean = false;
 
-  ngOnInit() {
+  lat: number;
+  lng: number;
+
+  constructor(private mapService: MapService,
+              private ref:ChangeDetectorRef) { }
+
+  mapReadyHandler() {
+    this.mapService.getGeoLocation(this.location).subscribe(
+      (coordinates) => {
+         this.lat = coordinates.lat;
+         this.lng = coordinates.lng;
+
+         this.ref.detectChanges();
+      }, () => {
+        this.isPositionError = true;
+      }
+    )
   }
-
 }

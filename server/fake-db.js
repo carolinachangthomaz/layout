@@ -4,8 +4,8 @@ class FakeDB{
     constructor(){
         this.rentals = [{
             title: "Nice view on ocean",
-            city: "San Francisco",
-            street: "Main street",
+            city: "São Paulo",
+            street: "Avenida Santo Amaro",
             category: "condo",
             image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
             bedrooms: 4,
@@ -15,8 +15,8 @@ class FakeDB{
             },
             {
             title: "Modern apartment in center",
-            city: "New York",
-            street: "Time Square",
+            city: "Rio de Janeiro",
+            street: "rua das laranjeiras",
             category: "apartment",
             image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
             bedrooms: 1,
