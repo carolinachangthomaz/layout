@@ -13,6 +13,11 @@ import { RentalListItemComponent } from './rental-list-item/rental-list-item.com
 
 import { RentalService} from './shared/rental.service';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderModule } from 'angular-image-slider';
+
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   { path: 'rentals',
@@ -36,9 +41,12 @@ const routes: Routes = [
      RouterModule.forChild(routes),
      HttpClientModule,
      NgPipesModule,
-     MapModule
+     MapModule,
+     BrowserAnimationsModule,
+     SliderModule,
+     NgbModule
     ],
-    providers: [RentalService]
+    providers: [RentalService,NgbCarouselConfig]
 })
 export class RentalModule {
 

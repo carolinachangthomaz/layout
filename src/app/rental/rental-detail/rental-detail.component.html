@@ -1,10 +1,25 @@
 <section id="rentalDetails" *ngIf="rental">
   <div class="upper-section">
     <div class="row">
-      <div class="col-md-6">
-        <img src="{{rental.image}}" alt="">
+      <div class="col-md-12">
+          <angular-image-slider [images]="rental.image.src" style="width:100%;height:auto;"></angular-image-slider>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-12">
+        <ngb-carousel *ngIf="rental.image">
+          <ng-template ngbSlide *ngFor="let image of rental.image">
+           <img [src]="image.src" alt="Random first slide"> 
+            <div class="carousel-caption">
+              <h3>{{image.texto}}</h3>
+             
+            </div>
+          </ng-template>
+        </ngb-carousel>
+
+      </div>
+      </div>
+      <br>
+      <div class="row">
+      <div class="col-md-12">
         <!-- Will be replaced with map !!!! -->
         <airbnb-map [location]="rental.city + ', ' +rental.street"></airbnb-map>
       </div>
