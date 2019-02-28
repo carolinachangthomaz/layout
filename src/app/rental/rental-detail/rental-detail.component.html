@@ -2,10 +2,10 @@
   <div class="upper-section">
     <div class="row">
       <div class="col-md-12">
-          <angular-image-slider [images]="rental.image.src" style="width:100%;height:auto;"></angular-image-slider>
+          <angular-image-slider [images]="rental.imagens"></angular-image-slider>
       </div>
       <div class="col-md-12">
-        <ngb-carousel *ngIf="rental.image">
+        <ngb-carousel *ngIf="rental.image" style="width: 80%; margin-left: 10%">
           <ng-template ngbSlide *ngFor="let image of rental.image">
            <img [src]="image.src" alt="Random first slide"> 
             <div class="carousel-caption">
